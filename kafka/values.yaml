@@ -24,7 +24,7 @@ resources: {}
   # requests:
   #   cpu: 100m
   #   memory: 1024Mi
-kafkaHeapOptions: "-Xmx1G -Xms1G"
+kafkaHeapOptions: "-Xmx4G -Xms4G"
 
 ## Optional Container Security context
 securityContext: {}
@@ -192,7 +192,7 @@ configurationOverrides:
   ## Setting "advertised.listeners" here appends to "PLAINTEXT://${POD_IP}:9092,", ensure you update the domain
   ## If external service type is Nodeport:
   "advertised.listeners": |-
-    EXTERNAL://10.25.157.28:$((31090 + ${KAFKA_BROKER_ID}))
+    EXTERNAL://10.80.82.203:$((31090 + ${KAFKA_BROKER_ID}))
   ## If external service type is LoadBalancer and distinct is true:
   # "advertised.listeners": |-
   #   EXTERNAL://kafka-$((${KAFKA_BROKER_ID})).cluster.local:19092
@@ -220,7 +220,7 @@ persistence:
   ## The size of the PersistentVolume to allocate to each Kafka Pod in the StatefulSet. For
   ## production servers this number should likely be much larger.
   ##
-  size: "10Gi"
+  size: "50Gi"
 
   ## The location within the Kafka container where the PV will mount its storage and Kafka will
   ## store its logs.
@@ -234,7 +234,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: nfs-storage
+  storageClass: managed-nfs-storage 
 
 jmx:
   ## Rules to apply to the Prometheus JMX Exporter.  Note while lots of stats have been cleaned and exposed,
@@ -488,8 +488,8 @@ zookeeper:
   persistence:
     enabled: true
     ## The amount of PV storage allocated to each Zookeeper pod in the statefulset
-    size: "2Gi"
-    storageClass: nfs-storage
+    size: "10Gi"
+    storageClass: managed-nfs-storage 
 
   ## Specify a Zookeeper imagePullPolicy
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
