@@ -4,23 +4,22 @@
 filebeatConfig:
   filebeat.yml: |
     filebeat.inputs:
-    - type: docker
-      containers.ids:
-      - '*'
+    - type: log
+      # Change to true to enable this input configuration.
       enabled: true
-      #paths: 
-      #  - /data/logs/swarm/*/*/*.log
+      #         # Paths that should be crawled and fetched. Glob based paths.
+      paths:
+        - /data/logs/swarm/*/*/*.log
       include_lines: ['^\d{4}-\d{2}-\d{2}']
       multiline.pattern: ^\d{4}-\d{2}-\d{2}
       multiline.negate: true
       multiline.match: after
+      processors:
+        - drop_fields:
+            fields: ["ecs","agent","host","input"]
 
-    processors:
-      - drop_fields:
-          fields: ["ecs","agent","host","input"]
-    
     output.kafka:
-      hosts: ["kafka.elk.svc.cluster.local:9092"]
+      hosts: ["10.80.82.203:31090", "10.80.82.203:31091", "10.80.82.203:31090"]
       topic: 'prod_logs'
       partition.round_robin:
         reachable_only: false
@@ -42,8 +41,8 @@ extraVolumeMounts:
 
 extraVolumes: 
   - name: logs
-    hostPath:
-      path: /data/logs/swarm/   #自定义日志路径
+    hostPath: 
+      path: /data/logs/swarm/
 
 # Root directory where Filebeat will write data to in order to persist registry data across pod restarts (file position and other metadata).
 hostPathRoot: /var/lib
