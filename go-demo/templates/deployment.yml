@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:
+  namespace: china-dev-platform
+  labels:
+    app: rdsbackuprecovery-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rdsbackuprecovery-deployment
+  template:
+    metadata:
+      labels:
+        app: rdsbackuprecovery-deployment
+    spec:
+      imagePullSecrets:
+        - name: wework-registry
+      containers:
+        - name: rdsbackuprecovery
+          imagePullPolicy: Always
+          image: wework-registry-vpc.cn-shanghai.cr.aliyuncs.com/wework/rdsbackuprecovery:latest
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /rds/ping
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 5
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /rds/ping
+              port: 8080
+            initialDelaySeconds: 5
+            timeoutSeconds: 1
+            periodSeconds: 5
+          resources:
+            requests:
+              cpu: 256m
+              memory: 512Mi
+            limits:
+              cpu: 1
+              memory: 1024Mi
+          env:
+            - name: REGION
+              valueFrom:
+                secretKeyRef:
+                  name: rdsbackuprecovery
+                  key: REGION
+            - name: ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: rdsbackuprecovery
+                  key: ACCESS_KEY
+            - name: ACCESS_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: rdsbackuprecovery
+                  key: ACCESS_SECRET
