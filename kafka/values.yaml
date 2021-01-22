@@ -45,12 +45,12 @@ podManagementPolicy: OrderedReady
 #   keys:
 #     - username
 #     - password
-#   # mountPath: /opt/kafka/secret
+#   # mountPath: /opt/kafka/secret.yaml
 # - name: myZkSecret
 #   keys:
 #     - user
 #     - pass
-#   mountPath: /opt/zookeeper/secret
+#   mountPath: /opt/zookeeper/secret.yaml
 
 
 ## The subpath within the Kafka container's PV where logs will be stored.

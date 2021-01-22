@@ -95,8 +95,8 @@ command:
   - /config-scripts/run
 
 ## Useful if using any custom authorizer.
-## Pass any secrets to the kafka pods. Each secret will be passed as an
-## environment variable by default. The secret can also be mounted to a
+## Pass any secrets to the kafka pods. Each secret.yaml will be passed as an
+## environment variable by default. The secret.yaml can also be mounted to a
 ## specific path (in addition to environment variable) if required. Environment
 ## variable names are generated as: `<secretName>_<secretKey>` (All upper case)
 # secrets:
@@ -104,12 +104,12 @@ command:
 #   keys:
 #     - username
 #     - password
-#   # mountPath: /opt/kafka/secret
+#   # mountPath: /opt/kafka/secret.yaml
 # - name: myZkSecret
 #   keys:
 #     - user
 #     - pass
-#   mountPath: /opt/zookeeper/secret
+#   mountPath: /opt/zookeeper/secret.yaml
 
 persistence:
   enabled: true
