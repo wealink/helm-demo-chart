@@ -2,6 +2,7 @@ configMap:
   region: "aarika"
   access_key: "baobab"
   access_secret: "coccis"
+  coutome: "zhbtest"
 
 
 secret:
@@ -19,30 +20,31 @@ deployment:
     tag: ""
   ports:
     - name: api
-      containerPort: 8080
+      containerPort: 80
     - name: health
       containerPort: 9090
   livenessProbe:
     httpGet:
-      path: /rds/ping
-      port: 8080
+      path: /
+      port: api
     initialDelaySeconds: 10
     timeoutSeconds: 5
     periodSeconds: 5
   readinessProbe:
     httpGet:
-      path: /rds/ping
-      port: 8080
+      path: /
+      port: api
     initialDelaySeconds: 5
     timeoutSeconds: 1
     periodSeconds: 5
   resources:
-    limits:
-      cpu: 100m
-      memory: 128Mi
     requests:
       cpu: 100m
       memory: 128Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi
+
   podAnnotations: {}
   nodeSelector: {}
   tolerations: []
