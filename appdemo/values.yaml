@@ -2,7 +2,7 @@ configMap:
   region: "aarika"
   access_key: "baobab"
   access_secret: "coccis"
-  coutome: "zhbtest"
+  env: "dev"
 
 
 secret:
@@ -17,7 +17,7 @@ deployment:
   image:
     repository: nginx
     pullPolicy: Always
-    tag: ""
+    tag: "1.17"
   ports:
     - name: api
       containerPort: 80
@@ -45,15 +45,14 @@ deployment:
       cpu: 100m
       memory: 128Mi
 
-  podAnnotations: {}
-  nodeSelector: {}
-  tolerations: []
-  affinity: {}
-
 
 service:
   type: ClusterIP
-  port: 80
+  ports:
+    - protocol: TCP
+      port: 8080
+      name: api
+      targetPort: api
 
 
 ingress:

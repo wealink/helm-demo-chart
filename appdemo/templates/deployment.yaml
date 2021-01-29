@@ -35,3 +35,5 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{ .Release.Name }}
+            - secretRef:
+                name: {{ .Release.Name }}
