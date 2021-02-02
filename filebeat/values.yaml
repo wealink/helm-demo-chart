@@ -76,7 +76,7 @@ podAnnotations: {}
 # Various pod security context settings. Bear in mind that many of these have an impact on Filebeat functioning properly.
 #
 # - User that the container will execute as. Typically necessary to run as root (0) in order to properly collect host container logs.
-# - Whether to execute the Filebeat containers as privileged containers. Typically not necessarily unless running within environments such as OpenShift.
+# - Whether to execute the Filebeat containers as privileged containers. Typically not necessarily unless running within value such as OpenShift.
 podSecurityContext:
   runAsUser: 0
   privileged: false
