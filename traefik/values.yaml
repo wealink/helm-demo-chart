@@ -237,11 +237,12 @@ ports:
     # You SHOULD NOT expose the traefik port on production deployments.
     # If you want to access it from outside of your cluster,
     # use `kubectl port-forward` or create a secure ingress
-    expose: false
+    expose: true
     # The exposed port for this service
     exposedPort: 9000
     # The port protocol (TCP/UDP)
     protocol: TCP
+    nodePort: 32090
   web:
     port: 8000
     # hostPort: 8000
@@ -251,7 +252,7 @@ ports:
     protocol: TCP
     # Use nodeport if set. This is useful if you have configured Traefik in a
     # LoadBalancer
-    # nodePort: 32080
+    nodePort: 32080
     # Port Redirections
     # Added in 2.2, you can make permanent redirects via entrypoints.
     # https://docs.traefik.io/routing/entrypoints/#redirection
@@ -263,7 +264,7 @@ ports:
     exposedPort: 443
     # The port protocol (TCP/UDP)
     protocol: TCP
-    # nodePort: 32443
+    nodePort: 32443
     # Set TLS at the entrypoint
     # https://doc.traefik.io/traefik/routing/entrypoints/#tls
     tls:
@@ -294,7 +295,8 @@ tlsOptions: {}
 # from.
 service:
   enabled: true
-  type: LoadBalancer
+  #type: LoadBalancer
+  type: NodePort
   # Additional annotations (e.g. for cloud provider specific config)
   annotations: {}
   # Additional service labels (e.g. for filtering Service by custom labels)
@@ -305,10 +307,10 @@ service:
     # externalTrafficPolicy: Cluster
     # loadBalancerIP: "1.2.3.4"
     # clusterIP: "2.3.4.5"
-  loadBalancerSourceRanges: []
+  #loadBalancerSourceRanges: []
     # - 192.168.0.1/32
     # - 172.16.0.0/16
-  externalIPs: []
+  #externalIPs: []
     # - 1.2.3.4
 
 ## Create HorizontalPodAutoscaler object.
