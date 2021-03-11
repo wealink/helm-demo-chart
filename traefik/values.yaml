@@ -13,7 +13,7 @@ deployment:
   # Can be either Deployment or DaemonSet
   kind: Deployment
   # Number of pods of the deployment (only applies when kind == Deployment)
-  replicas: 1
+  replicas: 3
   # Additional deployment annotations (e.g. for jaeger-operator sidecar injection)
   annotations: {}
   # Additional deployment labels (e.g. for filtering deployment by custom labels)
@@ -66,8 +66,8 @@ ingressClass:
 
 # Activate Pilot integration
 pilot:
-  enabled: false
-  token: ""
+  enabled: ture
+  token: "10c29cf3-aed3-4673-93b3-2d64dd89b78d"
 
 # Enable experimental features
 experimental:
