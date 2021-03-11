@@ -11,3 +11,5 @@ spec:
       services:
         - name: api@internal
           kind: TraefikService
+      middlewares:
+        - name: basic-auth

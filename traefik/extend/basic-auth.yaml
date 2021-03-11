@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: authsecret
+type: Opaque
+stringData:
+  users: ep:$apr1$hxUOJLXK$lmHC9pop0s9W5PRCPgMWf0
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: basic-auth
+spec:
+  basicAuth:
+    secret: authsecret
