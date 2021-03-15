@@ -21,9 +21,7 @@ deployment:
   # Additional pod annotations (e.g. for mesh injection or prometheus scraping)
   podAnnotations: {}
   # Additional Pod labels (e.g. for filtering Pod by custom labels)
-  podLabels:
-    io.kubernetes.deployment.name: "traefik"
-    io.kubernetes.namespace.name: "kube-system"
+  podLabels: {}
   # Additional containers (e.g. for metric offloading sidecars)
   additionalContainers: []
     # https://docs.datadoghq.com/developers/dogstatsd/unix_socket/?tab=host
@@ -147,7 +145,7 @@ logs:
     # also ask for the json format in the format option
     # format: json
     # By default, the level is set to ERROR. Alternative logging levels are DEBUG, PANIC, FATAL, ERROR, WARN, and INFO.
-    level: DEBUG
+    level: ERROR
   access:
     # To enable access logs
     enabled: true
