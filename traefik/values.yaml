@@ -13,7 +13,7 @@ deployment:
   # Can be either Deployment or DaemonSet
   kind: Deployment
   # Number of pods of the deployment (only applies when kind == Deployment)
-  replicas: 3
+  replicas: 2
   # Additional deployment annotations (e.g. for jaeger-operator sidecar injection)
   annotations: {}
   # Additional deployment labels (e.g. for filtering deployment by custom labels)
@@ -21,7 +21,9 @@ deployment:
   # Additional pod annotations (e.g. for mesh injection or prometheus scraping)
   podAnnotations: {}
   # Additional Pod labels (e.g. for filtering Pod by custom labels)
-  podLabels: {}
+  podLabels:
+    io.kubernetes.deployment.name: "traefik"
+    io.kubernetes.namespace.name: "kube-system"
   # Additional containers (e.g. for metric offloading sidecars)
   additionalContainers: []
     # https://docs.datadoghq.com/developers/dogstatsd/unix_socket/?tab=host
@@ -145,10 +147,10 @@ logs:
     # also ask for the json format in the format option
     # format: json
     # By default, the level is set to ERROR. Alternative logging levels are DEBUG, PANIC, FATAL, ERROR, WARN, and INFO.
-    level: ERROR
+    level: DEBUG
   access:
     # To enable access logs
-    enabled: false
+    enabled: true
     # By default, logs are written using the Common Log Format (CLF).
     # To write logs in JSON, use json in the format option.
     # If the given format is unsupported, the default (CLF) is used instead.
