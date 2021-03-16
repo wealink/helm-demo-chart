@@ -13,7 +13,7 @@ secret:
 
 deployment:
   replicaCount: 2
-  imagePullSecrets: wework-registr
+  imagePullSecrets: wework-registry
   image:
     repository: nginx
     pullPolicy: Always
