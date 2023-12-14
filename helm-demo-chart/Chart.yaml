@@ -1,0 +1,4 @@
+apiVersion: v2
+description: A Demo Helm chart for Kubernetes
+name: helm-demo-chart
+version: 0.2.0
