@@ -1,7 +1,0 @@
-apiVersion: storage.k8s.io/v1beta1
-kind: StorageClass
-metadata:
-  name: nfs-storage
-  namespace: tezign-common
-provisioner: fuseim.pri/ifs
-reclaimPolicy: Retain
