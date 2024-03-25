@@ -2,15 +2,15 @@ apiVersion: v1
 entries:
   helm-demo-chart:
   - apiVersion: v2
-    created: "2024-03-20T14:04:50.351166+08:00"
-    description: add service udp support and session affinity
-    digest: 380d755c6a89f79065249dd71fc79e5e499590d7dfb6517c895583c8a4b7bbe4
+    created: "2024-03-25T17:18:50.576792+08:00"
+    description: add service udp
+    digest: 563b1d7486e6a4c98dbb733951c07beb6b29c4cf9536e603c501f4f1a7010c89
     name: helm-demo-chart
     urls:
     - https://wealink.github.io/helm-demo-chart/helm-demo-chart-0.4.0.tgz
     version: 0.4.0
   - apiVersion: v2
-    created: "2024-03-20T14:04:50.350846+08:00"
+    created: "2024-03-25T17:18:50.576476+08:00"
     description: A Demo Helm chart for Kubernetes
     digest: f8da3e7792384aeae132b4255ceb289b15ebc87f2f97c449dcf8abf4d2e2a30f
     name: helm-demo-chart
@@ -18,7 +18,7 @@ entries:
     - https://wealink.github.io/helm-demo-chart/helm-demo-chart-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v2
-    created: "2024-03-20T14:04:50.350265+08:00"
+    created: "2024-03-25T17:18:50.575921+08:00"
     description: A Demo Helm chart for Kubernetes
     digest: 5e01f064e7c3f83581b5178afdbebf5adad50e066f18963f6fca386fc1d3a5d9
     name: helm-demo-chart
@@ -27,7 +27,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-03-20T14:04:50.349947+08:00"
+    created: "2024-03-25T17:18:50.57558+08:00"
     description: A Helm chart for Kubernetes
     digest: 1e4ccd96189d614d1ed10746abe144a295de02b88a71adbecc2d81bae203ab17
     name: helm-demo-chart
@@ -35,4 +35,4 @@ entries:
     urls:
     - https://wealink.github.io/helm-demo-chart/helm-demo-chart-0.1.0.tgz
     version: 0.1.0
-generated: "2024-03-20T14:04:50.348905+08:00"
+generated: "2024-03-25T17:18:50.574856+08:00"
