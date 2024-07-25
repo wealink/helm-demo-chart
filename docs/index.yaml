@@ -1,0 +1,46 @@
+apiVersion: v1
+entries:
+  helm-demo-chart:
+  - apiVersion: v2
+    created: "2024-07-25T11:00:33.601822+08:00"
+    description: udp service customize
+    digest: ef743d753a154b2a090e9de6790521b4f550890e8f4c151d5f07d0d531531150
+    name: helm-demo-chart
+    urls:
+    - helm-demo-chart-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    created: "2024-07-25T11:00:33.601302+08:00"
+    description: update k8s 1.28+ hpa api version
+    digest: 16e828045ebb0e14acd04478d4a4729ec50ea8aea2978742b8e92b8a1597e4e9
+    name: helm-demo-chart
+    urls:
+    - helm-demo-chart-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
+    created: "2024-07-25T11:00:33.601003+08:00"
+    description: A Demo Helm chart for Kubernetes
+    digest: f8da3e7792384aeae132b4255ceb289b15ebc87f2f97c449dcf8abf4d2e2a30f
+    name: helm-demo-chart
+    urls:
+    - helm-demo-chart-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    created: "2024-07-25T11:00:33.600566+08:00"
+    description: A Demo Helm chart for Kubernetes
+    digest: 5e01f064e7c3f83581b5178afdbebf5adad50e066f18963f6fca386fc1d3a5d9
+    name: helm-demo-chart
+    urls:
+    - helm-demo-chart-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-07-25T11:00:33.60016+08:00"
+    description: A Helm chart for Kubernetes
+    digest: 1e4ccd96189d614d1ed10746abe144a295de02b88a71adbecc2d81bae203ab17
+    name: helm-demo-chart
+    type: application
+    urls:
+    - helm-demo-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-07-25T11:00:33.598781+08:00"
