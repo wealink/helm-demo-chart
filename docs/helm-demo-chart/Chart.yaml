@@ -1,4 +1,0 @@
-apiVersion: v2
-description: update k8s 1.28+ hpa api version
-name: helm-demo-chart
-version: 0.3.1
