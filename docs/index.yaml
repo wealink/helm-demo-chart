@@ -1,0 +1,38 @@
+apiVersion: v1
+entries:
+  helm-demo-chart:
+  - apiVersion: v2
+    created: "2024-07-29T11:52:30.340726+08:00"
+    description: udp service customize
+    digest: ef743d753a154b2a090e9de6790521b4f550890e8f4c151d5f07d0d531531150
+    name: helm-demo-chart
+    urls:
+    - helm-demo-chart-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    created: "2024-07-29T11:52:30.339721+08:00"
+    description: A Demo Helm chart for Kubernetes
+    digest: fb082809e45bc5c53722b85f664e7f78f536e77146979955d47b894924805d74
+    name: helm-demo-chart
+    urls:
+    - helm-demo-chart-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    created: "2024-07-29T11:52:30.33912+08:00"
+    description: A Demo Helm chart for Kubernetes
+    digest: 5e01f064e7c3f83581b5178afdbebf5adad50e066f18963f6fca386fc1d3a5d9
+    name: helm-demo-chart
+    urls:
+    - helm-demo-chart-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-07-29T11:52:30.338735+08:00"
+    description: A Helm chart for Kubernetes
+    digest: 1e4ccd96189d614d1ed10746abe144a295de02b88a71adbecc2d81bae203ab17
+    name: helm-demo-chart
+    type: application
+    urls:
+    - helm-demo-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-07-29T11:52:30.337198+08:00"
